@@ -1,12 +1,12 @@
 ---
-title: Web安全-CORS
-description: 跨域资源共享
+title: JSX语法学习
+description: React知识库
 keywords:
   - Front-End
-  - Security
+  - React
 tags:
   - Front-End
-  - Security
+  - React
 sidebar_position: 1
 author: hanbin
 date: <% tp.date.now("YYYY-MM-DD") %>

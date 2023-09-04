@@ -1,8 +1,7 @@
 {
-  "label": "前端基础知识",
-  "position": 1,
+  "label": "前端基础知识库",
+  "position": 2,
   "link": {
-    "type": "generated-index",
-    "description": "参考 [前端学习路线](https://roadmap.sh/frontend)"
+    "type": "generated-index"
   }
 }

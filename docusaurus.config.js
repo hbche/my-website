@@ -148,10 +148,9 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            to: 'docs',
             position: 'left',
-            label: 'Tutorial',
+            label: '教程',
           },
           { to: '/blog', label: '📄 博客', position: 'left' },
           {
