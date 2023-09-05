@@ -1,4 +1,5 @@
 ---
+id: frontend-internet-computer-internet
 title: 计算机网络
 description: 前端工程师的网络知识库
 keywords:
@@ -9,5 +10,8 @@ tags:
   - Internet
 sidebar_position: 1
 author: hanbin
-date: <% tp.date.now("YYYY-MM-DD") %>
+
+last_update:
+  date: 2023-09-05
+  author: hbche
 ---

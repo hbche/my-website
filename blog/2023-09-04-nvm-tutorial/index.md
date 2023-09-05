@@ -1,5 +1,4 @@
 ---
-slug: nvm-tutorial
 title: NVM 教程
 authors:
   name: Hanbin Che

@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '瀚冰的小书屋',
-  tagline: 'Stay hungry. Stay foolish.',
+  tagline: '不积跬步,无以至千里.不积小流,无以成江河.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -38,7 +38,7 @@ const config = {
       ({
         docs: {
           path: 'docs',
-          breadcrumbs: true,
+          breadcrumbs: false,
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           // editUrl: ({ versionDocsDirPath, docPath }) =>
@@ -61,7 +61,6 @@ const config = {
           rehypePlugins: [],
           beforeDefaultRemarkPlugins: [],
           beforeDefaultRehypePlugins: [],
-          showLastUpdateTime: false,
           disableVersioning: false,
           includeCurrentVersion: true,
           lastVersion: undefined,
@@ -211,12 +210,30 @@ const config = {
         showLastUpdateTime: true,
         breadcrumbs: false,
       },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "journal",
+        path: "journal",
+        routeBasePath: "journal",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
     ]
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
+
       // 为入口网页添加全局的元数据属性，这些元数据将会被渲染到页面的 `head` 标签里
       metadata: [
         {
@@ -245,7 +262,7 @@ const config = {
                 to: '/frontend'
               },
               {
-                label: '后端',
+                label: '服务端',
                 to: '/backend'
               },
               {
@@ -269,10 +286,11 @@ const config = {
             ]
           },
           { to: '/journal', label: '📽️ 日志', position: 'left' },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          },
+          // 国际化
+          // {
+          //   type: 'localeDropdown',
+          //   position: 'right',
+          // },
           {
             href: 'https://github.com/hbche/my-website/tree/main',
             label: 'GitHub',

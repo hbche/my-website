@@ -1,4 +1,5 @@
 ---
+id: frontend-css-tailwindcss
 title: tailwindcss
 description: 前端工程师的CSS知识库
 keywords:
@@ -13,7 +14,9 @@ tags:
   - framework
 sidebar_position: 2
 author: hanbin
-date: <% tp.date.now("YYYY-MM-DD") %>
+last_update:
+  date: 2023-09-05
+  author: hbche
 ---
 
 只需书写 HTML 代码，无需书写 CSS，即可快速构建美观的网站。tailwind 本质上是一个工具集，包含了大量类似 `flex`、 `pt-4`、 `text-center` 以及 `rotate-90` 等工具类，可以组合使用并直接在 HTML 代码上实现任何 UI 设计。

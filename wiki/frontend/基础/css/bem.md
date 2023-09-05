@@ -1,4 +1,5 @@
 ---
+id: frontend-css-bem
 title: BEM
 keywords:
   - Front-End
@@ -10,7 +11,9 @@ tags:
   - BEM
 sidebar_position: 1
 author: hanbin
-date: <% tp.date.now("YYYY-MM-DD") %>
+last_update:
+  date: 2023-09-05
+  author: hbche
 ---
 
 ## 什么是 BEM 规范
