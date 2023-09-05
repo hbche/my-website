@@ -1,6 +1,6 @@
 ---
-slug: /
 sidebar_position: 1
+author: ['hbche']
 ---
 
 # 前端知识图谱
