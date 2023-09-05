@@ -24,6 +24,16 @@
 
 /* ----------------------------------------------------- */
 /* myCustomCSS */
+.indexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-grow: 1;
+  font-family: '楷体';
+}
+
 .myHeroContainer {
   display: flex;
   margin: 0;
@@ -34,14 +44,8 @@
   padding: 2.5rem 6rem;
 }
 
-main.index-container {
-  background-color: #f5f4f4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  flex-grow: 1;
+.myHeroContainer h1 {
+  font-family: '楷体';
 }
 
 .leftContainer {

@@ -33,7 +33,7 @@ export default function Home() {
     <Layout
       title={siteConfig.title}
       description={siteConfig.tagline}>
-      <main className='index-container'>
+      <main className={styles.indexContainer}>
         <MyHero />
       </main>
     </Layout>
