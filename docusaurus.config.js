@@ -202,6 +202,18 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
+        id: "devops",
+        path: "wiki/devops",
+        routeBasePath: "devops",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
         id: "roadmap",
         path: "work/roadmap",
         routeBasePath: "roadmap",
@@ -272,6 +284,10 @@ const config = {
               {
                 label: '嵌入式',
                 to: '/embedded'
+              },
+              {
+                label: 'DevOps',
+                to: '/devops'
               }
             ]
           },
