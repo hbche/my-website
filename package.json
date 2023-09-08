@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://hbche.github.io/my-website",
   "scripts": {
+    "install": "npm install",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
