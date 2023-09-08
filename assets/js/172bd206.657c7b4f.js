@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8112],{3529:e=>{e.exports=JSON.parse('[{"label":"database","permalink":"/my-website/database/tags/database","count":1}]')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6359],{6985:a=>{a.exports=JSON.parse('{"label":"journal","permalink":"/roadmap/tags/journal","allTagsPath":"/roadmap/tags","count":1,"items":[{"id":"work-main","title":"\u5de5\u4f5c\u8bb0\u5f55","description":"\u8bb0\u5f55\u5de5\u4f5c\u65e5\u5e38","permalink":"/roadmap/"}]}')}}]);
