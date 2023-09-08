@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://hbche.github.io/my-website",
   "scripts": {
-    "install": "npm install  --legacy-peer-deps",
+    "init": "npm install  --legacy-peer-deps",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
