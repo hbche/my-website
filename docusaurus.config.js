@@ -11,15 +11,17 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://hbche.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/my-website/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'hanbin.che', // Usually your GitHub org/user name.
-  projectName: 'my-website', // Usually your repo name.
+  organizationName: 'hanbin.che', // 拥有部署仓库的用户
+  projectName: 'my-website', // 部署仓库的名字
+  deploymentBranch: '', // 部署分支的名字
+  trailingSlash: false, // GitHub Pages 默认会在 Docusaurus 网址链接添加默认斜杠
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
