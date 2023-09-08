@@ -15,8 +15,8 @@ jobs:
 
     - name: Install and Build
       run: |
-        npm run install
-        npm run build
+        yran install
+        yarn build
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@main
