@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[49],{1618:a=>{a.exports=JSON.parse('{"label":"journal","permalink":"/journal/tags/journal","allTagsPath":"/journal/tags","count":1,"items":[{"id":"journal-main","title":"\u65e5\u5fd7","description":"\u8bb0\u5f55\u65e5\u5e38\u751f\u6d3b","permalink":"/journal/"}]}')}}]);

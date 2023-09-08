@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8007],{6768:a=>{a.exports=JSON.parse('{"label":"database","permalink":"/database/tags/database","allTagsPath":"/database/tags","count":1,"items":[{"id":"database-main","title":"\u6570\u636e\u5e93\u5b66\u4e60","description":"\u6570\u636e\u5e93\u77e5\u8bc6\u5e93","permalink":"/database/"}]}')}}]);
