@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '瀚冰的小书屋',
+  title: '小车的小书屋',
   tagline: '不积跬步,无以至千里.不积小流,无以成江河.',
   favicon: 'img/favicon.ico',
 
@@ -255,9 +255,9 @@ const config = {
       ],
       image: 'img/homepage-bg-main.png',
       navbar: {
-        title: '瀚冰的小书屋',
+        title: '小车的小书屋',
         logo: {
-          alt: '瀚冰的小书屋',
+          alt: '小车的小书屋',
           src: 'img/logo.svg',
         },
         items: [
