@@ -20,7 +20,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'hanbin.che', // 拥有部署仓库的用户
   projectName: 'my-website', // 部署仓库的名字
-  deploymentBranch: '', // 部署分支的名字
+  deploymentBranch: 'gh-pages', // 部署分支的名字 默认 gh-pages
   trailingSlash: false, // GitHub Pages 默认会在 Docusaurus 网址链接添加默认斜杠
 
   onBrokenLinks: 'log',
