@@ -1,12 +1,12 @@
 ---
-title: Rust 入门指南
+title: Rust 环境安装
 authors:
   name: Hanbin Che
   title: Front End Engineer
   url: https://github.com/hbche
   image_url: https://github.com/hbche.png
 description: 记录 Rust 学习过程
-tags: ['nvm', 'node', 'tutorial']
+tags: ['rust', 'cargo', 'tutorial']
 date: 2023-09-26
 ---
 
@@ -68,8 +68,6 @@ sudo apt install build-essential
    ![](windows-rust-install-step-08.png)
 
 至此，rust 安装程序就成功了 φ(\*￣ 0 ￣)可以开启 rust 之旅了( •̀ ω •́ )✧
-
-## Hello,World!
 
 ## 参考
 
