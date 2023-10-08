@@ -43,7 +43,8 @@ sudo apt install build-essential
    ![](linux-rust-install-result.png)
 
 4. 卸载 rust
-   ![](linux-rust-install-uninstall.png)
+![](linux-rust-install-uninstall.png)
+<!--truncate-->
 
 ### Windows 安装
 

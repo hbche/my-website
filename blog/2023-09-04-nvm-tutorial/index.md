@@ -31,6 +31,8 @@ $ node -v
 v12.22.6
 ```
 
+<!--truncate-->
+
 ### NVM 安装
 
 当前只记录 Windows 环境下的安装教程，其他平台的参照 [Installing and Updating](https://github.com/nvm-sh/nvm#installing-and-updating)。
