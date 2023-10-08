@@ -6,7 +6,7 @@ authors:
   url: https://github.com/hbche
   image_url: https://github.com/hbche.png
 description: 记录 Rust 学习过程
-tags: ['rust', 'cargo', 'tutorial']
+tags: ['rust', '数据类型', 'tutorial']
 date: 2023-10-08
 ---
 
