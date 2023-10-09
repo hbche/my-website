@@ -401,6 +401,7 @@ The value is: 1
 1. `n` 阶段斐波那契数列
 
    <details>
+   <summary>点击查看实现</summary>
    思路:
 
    F(0)=1，F(1)=1，F(n)=F(n-1)+F(n-2)（n≥2，n∈N\*）
@@ -424,6 +425,7 @@ The value is: 1
 2. 华氏温度和摄氏度之间转换
 
    <details>
+   <summary>点击查看实现</summary>
    思路:
 
    华氏温度和摄氏度之间的温度转换公式如下：
