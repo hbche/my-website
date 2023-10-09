@@ -22,7 +22,7 @@ C = (F - 32) <!-- -->*<!-- --> 5/9</p><p>其中，F 代表华氏温度，C 代�
         </author>
         <category label="rust" term="rust"/>
         <category label="控制流" term="控制流"/>
-        <category label="tutorial" term="tutorial"/>
+        <category label="通用编程概念" term="通用编程概念"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[IEEE-754标准]]></title>
@@ -51,7 +51,7 @@ C = (F - 32) <!-- -->*<!-- --> 5/9</p><p>其中，F 代表华氏温度，C 代�
         </author>
         <category label="rust" term="rust"/>
         <category label="数据类型" term="数据类型"/>
-        <category label="tutorial" term="tutorial"/>
+        <category label="通用编程概念" term="通用编程概念"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Rust 通用编程概念 - 函数]]></title>
@@ -66,7 +66,7 @@ C = (F - 32) <!-- -->*<!-- --> 5/9</p><p>其中，F 代表华氏温度，C 代�
         </author>
         <category label="rust" term="rust"/>
         <category label="函数" term="函数"/>
-        <category label="tutorial" term="tutorial"/>
+        <category label="通用编程概念" term="通用编程概念"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Rust 通用编程概念 - 变量]]></title>
@@ -82,7 +82,7 @@ C = (F - 32) <!-- -->*<!-- --> 5/9</p><p>其中，F 代表华氏温度，C 代�
         </author>
         <category label="rust" term="rust"/>
         <category label="变量" term="变量"/>
-        <category label="tutorial" term="tutorial"/>
+        <category label="通用编程概念" term="通用编程概念"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Rust 环境安装]]></title>
@@ -108,7 +108,7 @@ C = (F - 32) <!-- -->*<!-- --> 5/9</p><p>其中，F 代表华氏温度，C 代�
         </author>
         <category label="rust" term="rust"/>
         <category label="cargo" term="cargo"/>
-        <category label="tutorial" term="tutorial"/>
+        <category label="入门指南" term="入门指南"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[通过 Github Actions 部署 docusaurus 创建的静态网站]]></title>
