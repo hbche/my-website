@@ -98,7 +98,8 @@ println!("{}", s);
 
 <details>
 <summary>字符串字面量与字符串变量内存分布</summary>
-在Rust中，字符串字面量（string literals）是在栈（stack）上存储的。
+
+在 Rust 中，字符串字面量（string literals）是在栈（stack）上存储的。
 
 在 Rust 的内存管理中，堆（heap）和栈（stack）是两种主要的方式。栈用于存储局部变量和函数调用的信息，其存储的数据在函数调用结束后就会被销毁。而堆则是用于动态分配内存，存储全局变量或长期存活的数据。
 
@@ -141,7 +142,7 @@ Rust 采取了一个不同的策略：内存在拥有它的变量离开作用域
 
 这是一个将 `String` 需要的内存返回给分配器的很自然的位置：当 s 离开作用域的时候。当变量离开作用域，Rust 为我们调用一个特殊的函数。这个函数叫做 `drop`，在这里 `String` 的作者可以放置释放内存的代码。Rust 在结尾的 `}` 处自动调用 `drop`。
 
-> 注意：在 C++ 中，这种 item 在生命周期结束时释放资源的模式有时被称作 资源获取即初始化（Resource Acquisition Is Initialization (RAII)）。如果你使用过 RAII 模式的话应该对 Rust 的 drop 函数并不陌生。
+> 注意：在 C++ 中，这种 item 在生命周期结束时释放资源的模式有时被称作 **资源获取即初始化**（Resource Acquisition Is Initialization (RAII)）。如果你使用过 RAII 模式的话应该对 Rust 的 drop 函数并不陌生。
 
 这个模式对编写 Rust 代码的方式有着深远的影响。现在它看起来很简单，不过在更复杂的场景下代码的行为可能是不可预测的，比如当有多个变量使用在堆上分配的内存时。现在让我们探索一些这样的场景。
 
@@ -165,13 +166,123 @@ let s2 = s1;
 
 这看起来与上面的代码非常类似，所以我们可能会假设他们的运行方式也是类似的：也就是说，第二行可能会生成一个 `s1` 的拷贝并绑定到 `s2` 上。不过，事实上并不完全是这样。
 
-看看下图图以了解 `String` 的底层会发生什么。`String` 由三部分组成，如图左侧所示：一个指向存放字符串内容内存的指针，一个长度，和一个容量。这一组数据存储在栈上。右侧则是堆上存放内容的内存部分。
+看看下图以了解 `String` 的底层会发生什么。`String` 由三部分组成，如图左侧所示：一个指向存放字符串内容内存的指针，一个长度，和一个容量。这一组数据存储在栈上。右侧则是堆上存放内容的内存部分。
 
 ![](./ownership-01.svg)
 
+<h5>图 4-1：将值 "hello" 绑定给 s1 的 String 在内存中的表现形式</h5>
+
+长度表示 `String` 的内容当前使用了多少字节的内存。容量是 `String` 从分配器总共获取了多少字节的内存。长度与容量的区别是很重要的，不过在当前上下文中并不重要，所以现在可以忽略容量。
+
+当我们将 `s1` 赋值给 `s2`，`String` 的数据被复制了，这意味着我们从栈上拷贝了它的指针、长度和容量。我们并没有复制指针指向的堆上数据。换句话说，内存中数据的表现如下图所示。
+
+![](./ownership-02.svg)
+
+<h5>图 4-2：变量 s2 的内存表现，它有一份 s1 指针、长度和容量的拷贝</h5>
+
+这个表现形式看起来 `并不像` 下图中的那样，如果 Rust 也拷贝了堆上的数据，那么内存看起来就是这样的。如果 Rust 这么做了，那么操作 `s2 = s1` 在堆上数据比较大的时候会对运行时性能造成非常大的影响。
+
+![](./ownership-03.svg)
+
+<h5>图 4-3：另一个 s2 = s1 时可能的内存表现，如果 Rust 同时也拷贝了堆上的数据的话</h5>
+
+之前我们提到过当变量离开作用域后，Rust 自动调用 `drop` 函数并清理变量的堆内存。不过图 4-2 展示了两个数据指针指向了同一位置。这就有了一个问题：当 `s2` 和 `s1` 离开作用域，他们都会尝试释放相同的内存。这是一个叫做 **二次释放**（double free）的错误，也是之前提到过的内存安全性 bug 之一。两次释放（相同）内存会导致内存污染，它可能会导致潜在的安全漏洞。
+
+为了确保内存安全，这种场景下 Rust 的处理有另一个细节值得注意。在 `let s2 = s1` 之后，Rust 认为 `s1` 不再有效，因此 Rust 不需要在 `s1` 离开作用域后清理任何东西。看看在 `s2` 被创建之后尝试使用 `s1` 会发生什么；这段代码不能运行：
+
+```rust
+let s1 = String::from("hello");
+let s2 = s1.trim();
+println!("{}, world!", s1);
+```
+
+你会得到一个类似如下的错误，因为 Rust 禁止你使用无效的引用。
+
+```
+PS E:\github\rust-projects\ownership> cargo run
+   Compiling ownership v0.1.0 (E:\github\rust-projects\ownership)
+warning: unused variable: `s2`
+ --> src\main.rs:3:9
+  |
+3 |     let s2 = s1;
+  |         ^^ help: if this is intentional, prefix it with an underscore: `_s2`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+error[E0382]: borrow of moved value: `s1`
+ --> src\main.rs:4:27
+  |
+2 |     let s1 = String::from("Hello");
+  |         -- move occurs because `s1` has type `String`, which does not implement the `Copy` trait
+3 |     let s2 = s1;
+  |              -- value moved here
+4 |     println!("{} world!", s1);
+  |                           ^^ value borrowed here after move
+  |
+  = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider cloning the value if the performance cost is acceptable
+  |
+3 |     let s2 = s1.clone();
+  |                ++++++++
+
+For more information about this error, try `rustc --explain E0382`.
+warning: `ownership` (bin "ownership") generated 1 warning
+error: could not compile `ownership` (bin "ownership") due to previous error; 1 warning emitted
+```
+
+如果你在其他语言中听说过术语 **浅拷贝**（shallow copy）和 **深拷贝**（deep copy），那么拷贝指针、长度和容量而不拷贝数据可能听起来像浅拷贝。不过因为 Rust 同时使第一个变量无效了，这个操作被称为 **移动**（move），而不是浅拷贝。上面的例子可以解读为 `s1` 被 **移动** 到了 `s2` 中。那么具体发生了什么，如下图所示：
+
+![](./ownership-04.svg)
+
+<h5>图 4-4：s1 无效之后的内存表现</h5>
+
+这样就解决了我们的问题！因为只有 `s2` 是有效的，当其离开作用域，它就释放自己的内存，完毕。
+
+另外，这里还隐含了一个设计选择：Rust 永远也不会自动创建数据的 “深拷贝”。因此，任何 **自动** 的复制可以被认为对运行时性能影响较小。
+
 ### 变量与数据交互的方式（二）：克隆
 
+如果我们 确实 需要深度复制 String 中堆上的数据，而不仅仅是栈上的数据，可以使用一个叫做 clone 的通用函数。
+
+这是一个使用 `clone` 方法的例子：
+
+```rust
+fn main() {
+    let s1 = String::from("Hello");
+    let s2 = s1.clone();
+    println!("s1 = {}, s2 = {}", s1, s2);
+}
+```
+
+这段代码能正常运行，并且明确产生图 4-3 中行为，这里堆上的数据 确实 被复制了。
+
+当出现 `clone` 调用时，你知道一些特定的代码被执行而且这些代码可能相当消耗资源。你很容易察觉到一些不寻常的事情正在发生。
+
 ### 只在栈上的数据：拷贝
+
+这里还有一个没有提到的小窍门。这些代码使用了整型并且是有效的
+
+```rust
+fn main() {
+    let x = 5;
+    let y = x;
+    println!("x = {}, y = {}", x, y);
+}
+```
+
+但这段代码似乎与我们刚刚学到的内容相矛盾：没有调用 `clone`，不过 `x` 依然有效且没有被移动到 `y` 中。
+
+原因是像整型这样的在编译时已知大小的类型被整个存储在栈上，所以拷贝其实际的值是快速的。这意味着没有理由在创建变量 `y` 后使 `x` 无效。换句话说，这里没有深浅拷贝的区别，所以这里调用 `clone` 并不会与通常的浅拷贝有什么不同，我们可以不用管它。
+
+Rust 有一个叫做 `Copy trait` 的特殊标注，可以用在类似整型这样的存储在栈上的类型上。如果一个类型实现了 `Copy trait`，那么一个旧的变量在将其赋值给其他变量后仍然可用。Rust 不允许自身或其任何部分实现了 `Drop trait` 的类型使用 `Copy trait`。如果我们对其值离开作用域时需要特殊处理的类型使用 `Copy` 标注，将会出现一个编译时错误。
+
+那么哪些类型实现了 `Copy trait` 呢？你可以查看给定类型的文档来确认，不过作为一个通用的规则，任何一组简单标量值的组合都可以实现 `Copy`，任何不需要分配内存或某种形式资源的类型都可以实现 `Copy` 。如下是一些 `Copy` 的类型：
+
+- 所有整数类型，比如 `u32`。
+- 布尔类型，`bool`，它的值是 `true` 和 `false` 。
+- 所有浮点数类型，比如 `f64`。
+- 字符类型，`char`。
+- 元组，当且仅当其包含的类型也都实现 `Copy` 的时候。比如，`(i32, i32)` 实现了 `Copy`，但 `(i32, String)` 就没有。
 
 ### 所有权与函数
 
@@ -196,6 +307,83 @@ fn makes_copy(some_integer: i32) {
 ```
 
 当尝试在调用 `takes_ownership` 后使用 `s` 时，Rust 会抛出一个编译时错误。这些静态检查使我们免于犯错。试试在 `main` 函数中添加使用 `s` 和 `x` 的代码来看看哪里能使用他们，以及所有权规则会在哪里阻止我们这么做。
+
+```rust
+fn main() {
+    let s = String::from("Hello ownership");
+    takes_ownership(s);
+
+    println!("s = {}", s);
+
+    let i = 5;
+    makes_copy(i);
+    println!("i = {}", i);
+}
+
+fn takes_ownership(some_string: String) {
+    println!("{}", some_string);
+}
+
+fn makes_copy(some_integer: i32) {
+    println!("{}", some_integer);
+}
+```
+
+如果在 `takes_ownership` 函数调用后打印 `s`，将会报错
+
+```
+PS E:\github\rust-projects\ownership> cargo run
+   Compiling ownership v0.1.0 (E:\github\rust-projects\ownership)
+error[E0382]: borrow of moved value: `s`
+  --> src\main.rs:5:24
+   |
+2  |     let s = String::from("Hello ownership");
+   |         - move occurs because `s` has type `String`, which does not implement the `Copy` trait
+3  |     takes_ownership(s);
+   |                     - value moved here
+4  |
+5  |     println!("s = {}", s);
+   |                        ^ value borrowed here after move
+   |
+note: consider changing this parameter type in function `takes_ownership` to borrow instead if owning the value isn't necessary
+  --> src\main.rs:12:33
+   |
+12 | fn takes_ownership(some_string: String) {
+   |    ---------------              ^^^^^^ this parameter takes ownership of the value
+   |    |
+   |    in this function
+   = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider cloning the value if the performance cost is acceptable
+   |
+3  |     takes_ownership(s.clone());
+   |                      ++++++++
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `ownership` (bin "ownership") due to previous error
+```
+
+如果在 `takes_ownership` 函数调用中传入的是 `s.clone()` 后的结果，进行深克隆，那么 `s` 将不会在 `takes_ownership` 调用后发生移动。
+
+```rust
+fn main() {
+    let s = String::from("Hello ownership");
+    takes_ownership(s.clone());
+
+    println!("s = {}", s);
+
+    let i = 5;
+    makes_copy(i);
+    println!("i = {}", i);
+}
+
+fn takes_ownership(some_string: String) {
+    println!("{}", some_string);
+}
+
+fn makes_copy(some_integer: i32) {
+    println!("{}", some_integer);
+}
+```
 
 ### 返回值与作用域
 
@@ -231,7 +419,7 @@ fn takes_and_gives_back(a_string: String) -> String { // a_string 进入作用�
 
 变量的所有权总是遵循相同的模式：将值赋给另一个变量时移动它。当持有堆中数据值的变量离开作用域时，其值将通过 `drop` 被清理掉，除非数据被移动为另一个变量所有。
 
-在每一个函数中都获取所有权并接着返回所有权有些啰嗦。如果我们想要函数使用一个值但不获取所有权该怎么办呢？如果我们还要接着使用它的话，每次都传进去再返回来就有点烦人了，除此之外，我们也可能想返回函数体中产生的一些数据。
+在每一个函数中都获取所有权并接着返回所有权有些啰嗦。如果我们想要函数使用一个值但不获取所有权该怎么办呢？如果我们还要接着使用它的话，每次都传进去再返回来就有点烦人了，除此之外，我们也可能想返回函数体中产生的一些数据。我们可以使用元组来返回多个值:
 
 ```rust
 fn main() {
