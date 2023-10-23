@@ -125,11 +125,11 @@ fn main() {
 
     let user2 = User {
         email: String::from("another@example.com"),
-        // username: String::from("anotherusername123");  // 如果此处对username也指定新值的话,user1中没有字段发生借用,后面打印user1时就不会报错
+        // username: String::from("anotherusername123");  // 如果此处对 username 也指定新值的话，user1 中没有字段发生借用,后面打印 user1时就不会报错
         ..user1 // 此处不能有逗号
     };
 
-    // println!("{:#?}", user1); // 此处由于 user1.username 是 String 类型,在进行 结构体更新语法 时,其内部的 username发生了 借用,错译此处会发生编译报错
+    // println!("{:#?}", user1); // 此处由于 user1.username 是 String 类型,在进行 结构体更新语法 时,其内部的 username发生了 借用，所以此处会发生编译报错
     println!("{:#?}", user2);
 }
 ```
@@ -352,9 +352,9 @@ fn area(rect: &Rectangle) -> f64 {
 
 这里我们定义了一个结构体并称其为 `Rectangle`。在大括号中定义了字段 `width` 和 `height`，类型都是 `f64`。接着在 `main` 中，我们创建了一个具体的 `Rectangle` 实例，它的宽是 `30.0`，高是 `50.0`。
 
-函数 area 现在被定义为接收一个名叫 rectangle 的参数，其类型是一个结构体 Rectangle 实例的不可变借用。第 4 章讲到过，我们希望借用结构体而不是获取它的所有权，这样 main 函数就可以保持 rect1 的所有权并继续使用它，所以这就是为什么在函数签名和调用的地方会有 &。
+函数 area 现在被定义为接收一个名叫 `rectangle` 的参数，其类型是一个结构体 `Rectangle` 实例的不可变借用。我们希望借用结构体而不是获取它的所有权，这样 `main` 函数就可以保持 `rect1` 的所有权并继续使用它，所以这就是为什么在函数签名和调用的地方会有 `&`。
 
-area 函数访问 Rectangle 实例的 width 和 height 字段。area 的函数签名现在明确的阐述了我们的意图：使用 Rectangle 的 width 和 height 字段，计算 Rectangle 的面积。这表明宽高是相互联系的，并为这些值提供了描述性的名称而不是使用元组的索引值 0 和 1 。结构体胜在更清晰明了。
+`area` 函数访问 `Rectangle` 实例的 `width` 和 `height` 字段。`area` 的函数签名现在明确的阐述了我们的意图：使用 `Rectangle` 的 `width` 和 `height` 字段，计算 `Rectangle` 的面积。这表明宽高是相互联系的，并为这些值提供了描述性的名称而不是使用元组的索引值 `0` 和 `1`，现在更清晰明了。
 
 ### 通过派生 trait 增加实用功能
 
