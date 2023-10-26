@@ -1,5 +1,5 @@
 ---
-title: Rust 结构体
+title: Rust 使用结构体组织关联数据
 authors:
   name: Hanbin Che
   title: Front End Engineer

@@ -1,5 +1,5 @@
 ---
-title: Rust 所有权
+title: Rust 认识所有权
 authors:
   name: Hanbin Che
   title: Front End Engineer
