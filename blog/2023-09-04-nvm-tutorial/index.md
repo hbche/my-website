@@ -6,7 +6,7 @@ authors:
   url: https://github.com/hbche
   image_url: https://github.com/hbche.png
 description: 记录 NVM 学习过程
-tags: ['nvm', 'node', 'tutorial']
+tags: ['nvm', 'node', '教程']
 date: 2023-09-04
 ---
 

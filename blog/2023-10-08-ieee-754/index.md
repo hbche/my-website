@@ -6,7 +6,7 @@ authors:
   url: https://github.com/hbche
   image_url: https://github.com/hbche.png
 description: 记录计算机组成原理学习过程
-tags: ['标准', '计算机']
+tags: ['标准', '计算机通识']
 date: 2023-10-08
 ---
 

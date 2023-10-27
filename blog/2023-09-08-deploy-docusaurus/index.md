@@ -6,8 +6,8 @@ authors:
   url: https://github.com/hbche
   image_url: https://github.com/hbche.png
 description: 记录 静态网站 学习过程
-tags: ['deploy', 'docusaurus', 'tutorial']
+tags: ['部署', 'docusaurus', '教程']
 date: 2023-09-08
 ---
 
-#
+[部署到 GitHub 页面](https://docusaurus.nodejs.cn/docs/deployment#deploying-to-github-pages)

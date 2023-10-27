@@ -93,6 +93,8 @@ const config = {
           // editUrl: '',
           // 是否展示阅读时间
           showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
           // 博客侧边栏标题
           blogSidebarTitle: '近期博客',
           // 博客侧边栏展示的标题数，默认5个；如果是'ALL'，则侧边栏标题分页不可用且不展示侧边栏
@@ -114,7 +116,7 @@ const config = {
             '**/__tests__/**',
           ],
           // 每个博文列表页面显示的博文数量。
-          postsPerPage: 10,
+          postsPerPage: 5,
           // 博客列表页的根组件。
           blogListComponent: '@theme/BlogListPage',
           // 每个博文页面的根组件。
