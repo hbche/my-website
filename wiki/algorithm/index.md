@@ -13,7 +13,7 @@ last_update:
 - [x] 数组
 - [x] 栈
 - [x] 队列
-- [ ] 链表
+- [x] 链表
 - [ ] 集合
 - [ ] 字典和散列表
 - [ ] 递归
@@ -509,6 +509,15 @@ console.log('Step on no pets', palindromeChecker('Step on no pets'));
 ```
 
 ## 链表
+
+- 链表数据结构
+- 向链表添加元素
+- 从链表移除元素
+- 使用 LinkedList 类
+- 双向链表
+- 循环链表
+- 排序链表
+- 通过链表实现栈
 
 ## 集合
 

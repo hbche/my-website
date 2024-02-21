@@ -43,7 +43,7 @@ const config = {
     //   }],
     [
       'classic',
-      ({
+      {
         docs: {
           path: 'docs',
           breadcrumbs: false,
@@ -156,95 +156,107 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
-    ]
+      },
+    ],
   ],
 
   plugins: [
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "frontend",
-        path: "wiki/frontend",
-        routeBasePath: "frontend",
-        sidebarPath: require.resolve("./sidebars.js"),
+        id: 'frontend',
+        path: 'wiki/frontend',
+        routeBasePath: 'frontend',
+        sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         breadcrumbs: false,
       },
     ],
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "backend",
-        path: "wiki/backend",
-        routeBasePath: "backend",
-        sidebarPath: require.resolve("./sidebars.js"),
+        id: 'backend',
+        path: 'wiki/backend',
+        routeBasePath: 'backend',
+        sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         breadcrumbs: false,
       },
     ],
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "database",
-        path: "wiki/database",
-        routeBasePath: "database",
-        sidebarPath: require.resolve("./sidebars.js"),
+        id: 'database',
+        path: 'wiki/database',
+        routeBasePath: 'database',
+        sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         breadcrumbs: false,
       },
     ],
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "embedded",
-        path: "wiki/embedded",
-        routeBasePath: "embedded",
-        sidebarPath: require.resolve("./sidebars.js"),
+        id: 'embedded',
+        path: 'wiki/embedded',
+        routeBasePath: 'embedded',
+        sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         breadcrumbs: false,
       },
     ],
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "devops",
-        path: "wiki/devops",
-        routeBasePath: "devops",
-        sidebarPath: require.resolve("./sidebars.js"),
+        id: 'devops',
+        path: 'wiki/devops',
+        routeBasePath: 'devops',
+        sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         breadcrumbs: false,
       },
     ],
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "roadmap",
-        path: "work/roadmap",
-        routeBasePath: "roadmap",
-        sidebarPath: require.resolve("./sidebars.js"),
+        id: 'algorithm',
+        path: 'wiki/algorithm',
+        routeBasePath: 'algorithm',
+        sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         breadcrumbs: false,
       },
     ],
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "journal",
-        path: "journal",
-        routeBasePath: "journal",
-        sidebarPath: require.resolve("./sidebars.js"),
+        id: 'roadmap',
+        path: 'work/roadmap',
+        routeBasePath: 'roadmap',
+        sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         breadcrumbs: false,
       },
-    ]
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'journal',
+        path: 'journal',
+        routeBasePath: 'journal',
+        sidebarPath: require.resolve('./sidebars.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
   ],
 
   themeConfig:
@@ -261,7 +273,7 @@ const config = {
         {
           name: 'keywords',
           content: 'hanbin, frontend, react, angular, javascript, css',
-        }
+        },
       ],
       image: 'img/homepage-bg-main.png',
       navbar: {
@@ -278,38 +290,44 @@ const config = {
           },
           { to: '/blog', label: '📄 博客', position: 'left' },
           {
-            label: '📚 维基', position: 'left', items: [
+            label: '📚 维基',
+            position: 'left',
+            items: [
+              {
+                label: '算法',
+                to: '/algorithm',
+              },
               {
                 label: '前端',
-                to: '/frontend'
+                to: '/frontend',
               },
               {
                 label: '服务端',
-                to: '/backend'
+                to: '/backend',
               },
               {
                 label: '数据库',
-                to: '/database'
+                to: '/database',
               },
               {
                 label: '嵌入式',
-                to: '/embedded'
+                to: '/embedded',
               },
               {
                 label: 'DevOps',
-                to: '/devops'
-              }
-            ]
+                to: '/devops',
+              },
+            ],
           },
           {
-            position: "left",
-            label: "👨‍💻 职业",
+            position: 'left',
+            label: '👨‍💻 职业',
             items: [
               {
-                label: "求职之路",
-                to: "/roadmap",
+                label: '求职之路',
+                to: '/roadmap',
               },
-            ]
+            ],
           },
           { to: '/journal', label: '📽️ 日志', position: 'left' },
           // 国际化
@@ -326,13 +344,13 @@ const config = {
       },
 
       footer: {
-        style: "dark",
+        style: 'dark',
         copyright: `Copyright © ${new Date().getFullYear()} hbche, Inc. Built with <a href="https://www.docusaurus.cn/" target="_blank" rel="noopener noreferrer">Docusaurus</a>.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        defaultLanguage: "markdown",
+        defaultLanguage: 'markdown',
       },
       mermaid: {
         theme: { light: 'neutral', dark: 'forest' },
@@ -341,7 +359,7 @@ const config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid']
+  themes: ['@docusaurus/theme-mermaid'],
 };
 
 module.exports = config;

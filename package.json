@@ -6,7 +6,7 @@
   "scripts": {
     "init": "npm install  --legacy-peer-deps",
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "docusaurus start --port 4000",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
