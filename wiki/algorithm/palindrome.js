@@ -81,7 +81,7 @@ class Dequeue {
 }
 
 /**
- * 回文检查
+ * 回文字符串检查
  * @param {*} aString
  * @returns
  */

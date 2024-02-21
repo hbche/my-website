@@ -1,3 +1,4 @@
+/** 双端队列 */
 class Dequeue {
   constructor() {
     this.count = 0;

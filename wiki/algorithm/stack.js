@@ -1,3 +1,4 @@
+/** 栈 */
 class Stack {
   constructor() {
     this.items = [];

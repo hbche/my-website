@@ -1,6 +1,6 @@
 class Queue {
   constructor() {
-    /** 队列大小 */
+    /** 队列尾部的索引 */
     this.count = 0;
     /** 队列顶部的索引 */
     this.lowestCount = 0;
