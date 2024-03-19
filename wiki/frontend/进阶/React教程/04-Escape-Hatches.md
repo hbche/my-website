@@ -3,18 +3,16 @@ id: frontend-react-escape-hatches
 title: 逃脱方案
 description: React 知识库
 keywords:
-
-- Front-End
-- React
-  tags:
-- Front-End
-- React
-  sidebar_position: 4
-  author: hanbin
-  last_update:
+  - Front-End
+  - React
+tags:
+  - Front-End
+  - React
+sidebar_position: 4
+author: hanbin
+last_update:
   date: 2023-06-28 19:09:42
   author: hbche
-
 ---
 
 ### 使用 ref 引用值
