@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8501],{17174:e=>{e.exports=JSON.parse('[{"label":"algorithm","permalink":"/my-website/algorithm/tags/algorithm","count":1}]')}}]);
