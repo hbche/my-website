@@ -461,7 +461,7 @@ promise.then(
 // Hello Promise Resolve~ third.
 ```
 
-### <text style="color: red;">实现 then 方法的链式调用[难点]</text>
+### <text style={{"color": "red"}}>实现 then 方法的链式调用[难点]</text>
 
 **要想实现 then 的链式调用，主要需要解决两个问题：**
 
