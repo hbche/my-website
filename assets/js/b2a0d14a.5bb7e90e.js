@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8081],{52181:e=>{e.exports=JSON.parse('{"permalink":"/my-website/blog/tags/rust/page/2","page":2,"postsPerPage":5,"totalPages":2,"totalCount":8,"previousPage":"/my-website/blog/tags/rust","blogDescription":"Blog","blogTitle":"Blog title"}')}}]);
