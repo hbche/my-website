@@ -1,4 +1,5 @@
 ---
+id: zustand-introduction
 title: Zustand 简介
 description: 如何使用 zustand
 authors:
@@ -7,7 +8,10 @@ authors:
   url: https://github.com/hbche
   image_url: https://github.com/hbche.png
 tags: ['前端', '状态管理', 'zustand', '翻译']
-date: 2025-01-14
+sidebar_position: 1
+last_update:
+  date: 2025-01-15
+  author: hbche
 ---
 
 一个小型、快速且可扩展的基础状态管理解决方案。

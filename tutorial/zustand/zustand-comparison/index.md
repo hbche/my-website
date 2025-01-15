@@ -1,5 +1,6 @@
 ---
-title: Zustand 比较
+id: zustand-comparison
+title: Zustand 与其他状态管理库的比较
 description: Zustand 与其他类似库的对比情况
 authors:
   name: Hanbin Che
@@ -7,7 +8,10 @@ authors:
   url: https://github.com/hbche
   image_url: https://github.com/hbche.png
 tags: ['前端', '状态管理', 'zustand', '翻译']
-date: 2025-01-14
+sidebar_position: 2
+last_update:
+  date: 2025-01-15
+  author: hbche
 ---
 
 Zustand 是众多React状态管理库中的一种.

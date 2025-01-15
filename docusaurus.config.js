@@ -51,48 +51,6 @@ const config = {
     [
       'classic',
       {
-        docs: {
-          path: 'docs',
-          breadcrumbs: false,
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          // editUrl: ({ versionDocsDirPath, docPath }) =>
-          //   `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`,
-          editLocalizedFiles: false,
-          editCurrentVersion: false,
-          routeBasePath: 'docs',
-          include: ['**/*.md', '**/*.mdx'],
-          exclude: [
-            '**/_*.{js,jsx,ts,tsx,md,mdx}',
-            '**/_*/**',
-            '**/*.test.{js,jsx,ts,tsx}',
-            '**/__tests__/**',
-          ],
-          sidebarPath: 'sidebars.js',
-          // docLayoutComponent: '@theme/DocPage',
-          // docItemComponent: '@theme/DocItem',
-          // docTagDocListComponent: '@theme/DocTagDocListPage',
-          // remarkPlugins: [require('remark-math')],
-          rehypePlugins: [],
-          beforeDefaultRemarkPlugins: [],
-          beforeDefaultRehypePlugins: [],
-          disableVersioning: false,
-          includeCurrentVersion: true,
-          lastVersion: undefined,
-          // versions: {
-          //   current: {
-          //     label: 'Android SDK v2.0.0 (WIP)',
-          //     path: 'android-2.0.0',
-          //     banner: 'none',
-          //   },
-          //   '1.0.0': {
-          //     label: 'Android SDK v1.0.0',
-          //     path: 'android-1.0.0',
-          //     banner: 'unmaintained',
-          //   },
-          // },
-          // onlyIncludeVersions: ['current', '1.0.0', '2.0.0'],
-        },
         blog: {
           // 博客内容目录的文件系统路径，相对于站点目录。
           path: 'blog',
@@ -168,6 +126,18 @@ const config = {
   ],
 
   plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorial',
+        path: 'tutorial/zustand',
+        routeBasePath: 'zustand',
+        sidebarPath: require.resolve('./sidebars.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -291,9 +261,14 @@ const config = {
         },
         items: [
           {
-            to: 'docs',
-            position: 'left',
             label: '教程',
+            position: 'left',
+            items: [
+              {
+                label: 'Zustand学习记录',
+                to: '/zustand'
+              }
+            ]
           },
           { to: '/blog', label: '📄 博客', position: 'left' },
           {

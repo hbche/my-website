@@ -1,7 +1,7 @@
 ---
 id: journal-main
 slug: /
-title: 日志
+title: 日记
 description: 记录日常生活
 keywords: ['journal']
 tags: ['journal']
