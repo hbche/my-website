@@ -17,7 +17,8 @@ last_update:
 
 ### 首先创建一个 Store
 
-我们的 store 是一个 hook！我们可以将任何内容放入其中：原始值、对象、函数。状态必须以不可变的方式更新，而设置（set）函数会合并状态以帮助实现这一点。
+我们的 store 是一个 hook！我们可以将任何内容放入其中：原始值、对象、函数。状态必
+须以不可变的方式更新，而设置（set）函数会合并状态以帮助实现这一点。
 
 ```javascript
 import { create } from 'zustand';
@@ -31,7 +32,8 @@ const useBearStore = create((set) => ({
 
 ### 然后与我们的组件绑定
 
-在任何需要用到的地方使用该 hook,无需 provider.选择我们需要的状态,当状态发生变化时对应的组件将会重新渲染.
+在任何需要用到的地方使用该 hook,无需 provider.选择我们需要的状态,当状态发生变化
+时对应的组件将会重新渲染.
 
 ```javascript
 function BearCounter() {
@@ -64,7 +66,8 @@ function Controls() {
 
 ### 获取所有状态
 
-我们可以这样一次性拿到 store 中的全部状态，但请注意，这将导致组件在每次状态变化时都会更新！
+我们可以这样一次性拿到 store 中的全部状态，但请注意，这将导致组件在每次状态变化
+时都会更新！
 
 ```javascript
 const bearState = useBearStore();
@@ -79,7 +82,9 @@ const nuts = useBearStore((state) => state.nuts);
 const honey = useBearStore((state) => state.honey);
 ```
 
-如果你想构建一个包含多个状态选择的单一对象，类似于 Redux 的 mapStateToProps，你可以使用 useShallow 来防止当选择器根据浅相等性比较发现没有变化时的不必要的重新渲染。
+如果你想构建一个包含多个状态选择的单一对象，类似于 Redux 的 mapStateToProps，你
+可以使用 useShallow 来防止当选择器根据浅相等性比较发现没有变化时的不必要的重新渲
+染。
 
 ```javascript
 import { create } from 'zustand';
@@ -106,7 +111,8 @@ const [nuts, honey] = useBearStore(
 const treats = useBearStore(useShallow((state) => Object.keys(state.treats)));
 ```
 
-为了更精确地控制重新渲染，你可以提供任何自定义的相等性函数（这个示例需要使用 createWithEqualityFn）。
+为了更精确地控制重新渲染，你可以提供任何自定义的相等性函数（这个示例需要使用
+createWithEqualityFn）。
 
 ```javascript
 const treats = useBearStore(
@@ -117,7 +123,9 @@ const treats = useBearStore(
 
 ### 覆盖状态
 
-`set` 函数有一个第二个参数，默认为 `false`。如果设置为 `true`，它将替换整个状态模型，而不是合并。请注意不要覆盖你依赖的部分，比如动作（actions），更新状态的函数。
+`set` 函数有一个第二个参数，默认为 `false`。如果设置为 `true`，它将替换整个状态
+模型，而不是合并。请注意不要覆盖你依赖的部分，比如动作（actions），更新状态的函
+数。
 
 ```javascript
 import omit from 'lodash-es/omit';
@@ -147,7 +155,8 @@ const useFishStore = create((set) => ({
 
 ### 在 action 中获取状态
 
-`set` 允许使用函数更新 `set(state => result)`，但我们仍然可以通过 `get` 在其外部访问状态。
+`set` 允许使用函数更新 `set(state => result)`，但我们仍然可以通过 `get` 在其外部
+访问状态。
 
 ```javascript
 const useSoundStore = create((set, get) => ({
@@ -161,7 +170,8 @@ const useSoundStore = create((set, get) => ({
 
 ### 在组件外部读取/写入状态并响应变化
 
-有时你需要以非响应式的方式访问状态，或者对状态管理器（store）进行操作。在这些情况下，生成的钩子（hook）在其原型上附加了一些实用函数。
+有时你需要以非响应式的方式访问状态，或者对状态管理器（store）进行操作。在这些情
+况下，生成的钩子（hook）在其原型上附加了一些实用函数。
 
 ```javascript
 const useDogStore = create((state) => ({
@@ -234,7 +244,8 @@ const unsub5 = useDogStore.subscribe((state) => state.paw, console.log, {
 
 ### 在 React 之外使用 zustand
 
-`Zustand` 核心可以被导入和使用，而无需依赖 `React`。唯一的区别是 `create` 函数不会返回一个钩子，而是 API 实用工具。
+`Zustand` 核心可以被导入和使用，而无需依赖 `React`。唯一的区别是 `create` 函数不
+会返回一个钩子，而是 API 实用工具。
 
 ```javascript
 import {createStore} from 'zustand';
@@ -256,9 +267,11 @@ const useBoundStore = (selector) => useStore(vanillaStore, selector);
 
 ### 瞬态更新（用于频繁发生的状态变化）
 
-订阅函数允许组件绑定到状态的一部分，而不会在状态变化时强制重新渲染。最好将其与 `useEffect` 结合使用，以便在组件卸载时自动取消订阅。当你被允许直接修改视图时，这可能会对性能产生显著的影响。
+订阅函数允许组件绑定到状态的一部分，而不会在状态变化时强制重新渲染。最好将其与
+`useEffect` 结合使用，以便在组件卸载时自动取消订阅。当你被允许直接修改视图时，这
+可能会对性能产生显著的影响。
 
-``` javascript
+```javascript
 const useScratchStore = create((set) => ({ scratches: 0, ... }))
 
 const Component = () => {
