@@ -7,7 +7,7 @@ authors:
   url: https://github.com/hbche
   image_url: https://github.com/hbche.png
 tags: ['前端', '状态管理', 'zustand', '翻译']
-sidebar_position: 12
+sidebar_position: 13
 last_update:
   date: 2025-01-16
   author: hbche
