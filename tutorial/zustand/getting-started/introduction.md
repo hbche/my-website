@@ -1,6 +1,6 @@
 ---
-title: Zustand 简介
-description: 如何使用 zustand
+title: 介绍
+description: 介绍
 authors:
   name: Hanbin Che
   title: Front End Engineer

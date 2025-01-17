@@ -1,6 +1,6 @@
 ---
-title: 分片模式
-description: 分片模式
+title: 切片模式
+description: 切片模式
 authors:
   name: Hanbin Che
   title: Front End Engineer
@@ -179,4 +179,4 @@ export default useBoundStore;
 ### 使用 TypeScript
 
 关于如何在 Zustand 中使用 TypeScript 的切片模式的详细指南可以在这里找到
-：[这里](https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md#slices-pattern)。
+：[这里](./typescript-guide#切片模式)。
