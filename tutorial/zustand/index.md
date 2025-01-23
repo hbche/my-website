@@ -13,6 +13,8 @@ last_update:
   author: hbche
 ---
 
+![](./img/bear.jpg)
+
 ## Zustand 基础
 
 ### 首先创建一个 Store
