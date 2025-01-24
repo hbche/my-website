@@ -261,7 +261,7 @@ const config = {
         },
         items: [
           {
-            label: '教程',
+            label: '📖 教程',
             position: 'left',
             items: [
               {
