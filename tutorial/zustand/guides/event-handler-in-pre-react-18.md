@@ -1,6 +1,6 @@
 ---
-title: React 18 之前版本在 React 事件处理函数中调用 actions
-description: React 18 之前版本在 React 事件处理函数中调用 actions
+title: 在React 18之前的React事件处理程序之外调用 actions
+description: 在React 18之前的React事件处理程序之外调用 actions
 authors:
   name: Hanbin Che
   title: Front End Engineer

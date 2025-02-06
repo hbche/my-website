@@ -71,7 +71,22 @@ export const createFishSlice: StateCreator<
 我们现在可以将这两个 store 合并为一个 **bounded store**：
 
 ```ts
-const;
+import { create } from 'zustand';
+import { BearSlice, createBearSlice } from './create-bear-slice';
+import { FishSlice, createFishSlice } from './create-fish-slice';
+import { persist } from 'zustand/middleware';
+
+const useBoundStore = create<BearSlice & FishSlice & SharedSlice>()(
+  persist(
+    (...a) => ({
+      ...createBearSlice(...a),
+      ...createFishSlice(...a),
+    }),
+    { name: '' }
+  )
+);
+
+export default useBoundStore;
 ```
 
 #### 在 React 组件中使用

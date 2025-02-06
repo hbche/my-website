@@ -32,7 +32,7 @@ const useBearStore = create((set) => ({
 }));
 ```
 
-### 然后与我们的组件绑定
+### 然后与我们的组件绑定，就这么简单
 
 在任何需要用到的地方使用该 hook,无需 provider.选择我们需要的状态,当状态发生变化
 时对应的组件将会重新渲染.
@@ -287,3 +287,220 @@ const Component = () => {
 ```
 
 ### 厌倦了 reducer 和更改嵌套状态了吗？使用 Immer 吧！
+
+降低嵌套结构是很累人的。是否愿意尝试 [immer](https://github.com/immerjs/immer)
+呢？
+
+```js
+import { produce } from 'immer';
+
+const useLushStore = create((set) => ({
+  lush: {
+    forest: {
+      contains: {
+        a: 'bear',
+      },
+    },
+  },
+  clearForest: () =>
+    set(
+      produce((state) => {
+        state.lush.forest.contains = null;
+      })
+    ),
+}));
+
+const clearForest = useLushStore((state) => state.clearForest);
+clearForest();
+```
+
+Immer 可以在任何需要更新嵌套状态的时候使用，比如在 React，Redux，当然还有
+Zustand！
+
+我们可以使用 Immer 来缩短深度嵌套对象的状态更新。我们来看一个例子：
+
+```ts
+  immerInc: () =>
+    set(produce((state: State) => { ++state.deep.nested.obj.count })),
+```
+
+### 持久化中间件
+
+我们可以使用任何类型的 storage 存储我们 store 中的数据。
+
+```ts
+import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
+
+interface FishStore {
+  fishes: number;
+  addFish: () => void;
+}
+
+export const useFishStore = create(
+  persist<FishStore>(
+    (set, get) => {
+      return {
+        fishes: 0,
+        addFish: () => set({ fishes: get().fishes + 1 }),
+      };
+    },
+    {
+      name: 'food-storage',
+      storage: createJSONStorage(() => sessionStorage),
+    }
+  )
+);
+```
+
+### Immer 中间件
+
+Immer 也可以作为中间件使用
+
+```ts
+import { create } from 'zustand';
+import { immer } from 'zustand/middleware/immer';
+
+const useBeeStore = create(
+  immer((set) => ({
+    bees: 0,
+    addBees: (by) =>
+      set((state) => {
+        state.bees += by;
+      }),
+  }))
+);
+```
+
+### 没有类 redux 风格的 reducers 和 actions 没法活？
+
+```js
+const types = { increase: 'INCREASE', decrease: 'DECREASE' };
+
+const reducer = (state, { type, by = 1 }) => {
+  switch (type) {
+    case types.increase:
+      return { grumpiness: state.grumpiness + by };
+    case types.decrease:
+      return { grumpiness: state.grumpiness - by };
+  }
+};
+
+const useGrumpyStore = create((set) => ({
+  grumpiness: 0,
+  dispatch: (args) => set((state) => reducer(state, args)),
+}));
+
+const dispatch = useGrumpyStore((state) => state.dispatch);
+dispatch({ type: types.increase, by: 2 });
+```
+
+或者，只使用我们的 redux 中间件。它连接你的 main-reducer，设置初始状态，并为状态
+本身和普通 API 添加一个分派函数。
+
+```ts
+import { redux } from 'zustand/middleware';
+
+const useGrumpyStore = create(redux(reducer, initialState));
+```
+
+### Redux devtools
+
+为了使用 devtools 中间件我们需要安装浏览器插件
+[Redux DevTools Chrome extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+
+```ts
+import { devtools } from 'zustand/middleware'
+
+// Usage with a plain action store, it will log actions as "setState"
+const usePlainStore = create(devtools((set) => ...))
+// Usage with a redux store, it will log full action types
+const useReduxStore = create(devtools(redux(reducer, initialState)))
+```
+
+一个 redux devtools 连接多个 store。
+
+```ts
+import { devtools } from 'zustand/middleware'
+
+// Usage with a plain action store, it will log actions as "setState"
+const usePlainStore1 = create(devtools((set) => ..., { name, store: storeName1 }))
+const usePlainStore2 = create(devtools((set) => ..., { name, store: storeName2 }))
+// Usage with a redux store, it will log full action types
+const useReduxStore = create(devtools(redux(reducer, initialState)), { name, store: storeName3 })
+const useReduxStore = create(devtools(redux(reducer, initialState)), { name, store: storeName4 })
+```
+
+不同的连接名称将在 redux devtools 中分隔存储。这也有助于将不同的 store 分组到单
+独的 redux devtools 连接中。
+
+### React Context
+
+使用 `create` 创建的 store 不需要使用 context provider。在某些情况下，我们可能希
+望使用上下文进行依赖项注入，或者如果我们希望使用来自组件的 props 初始化 store。
+因为普通 store 是一个 hook，如果通过 context 将它传递下去可能违背 hooks 的规则。
+
+自 v4 以来可用的推荐方法是使用 vanilla store。
+
+```ts
+import { createContext, useContext } from 'react'
+import { createStore, useStore } from 'zustand'
+
+const store = createStore(...) // vanilla store without hooks
+
+const StoreContext = createContext()
+
+const App = () => (
+  <StoreContext.Provider value={store}>
+    ...
+  </StoreContext.Provider>
+)
+
+const Component = () => {
+  const store = useContext(StoreContext)
+  const slice = useStore(store, selector)
+  ...
+```
+
+### TypeSCript 使用
+
+typescript 的基础使用除了将 `create(...)` 替换成 `create<State>(...)` 之外没有其
+他特殊的地方。
+
+```ts
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
+import type {} from '@redux-devtools/extension'; // required for devtools typing
+
+interface BearState {
+  bears: number;
+  increase: (by: number) => void;
+}
+
+const useBearStore = create<BearState>()(
+  devtools(
+    persist(
+      (set) => ({
+        bears: 0,
+        increase: (by) => set((state) => ({ bears: state.bears + by })),
+      }),
+      {
+        name: 'bear-storage',
+      }
+    )
+  )
+);
+```
+
+更多完整 TypeScript 指南在[这里](./guides/typescript-guide.md)
+
+### 最佳实践
+
+- 如何组织代码以更好地维护:
+  [存 store 分为单独的切片](./guides/slices-pattern.md)
+- 使用不带固执己见的库: [受 Flux 启发的实践](./guides/flex-inspired-practice.md)
+- [在 React 18 之前的 React 事件处理程序之外调用 actions](./guides/event-handler-in-pre-react-18.md)
+
+### 与其他库比较
+
+[比较](./getting-started/comparison.md)
