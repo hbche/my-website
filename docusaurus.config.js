@@ -110,72 +110,6 @@ const config = {
           //   },
           // },
         },
-        // books: {
-        //   // 博客内容目录的文件系统路径，相对于站点目录。
-        //   path: 'books',
-        //   // 编辑文档的基础 URL。 The final URL is computed by editUrl + relativePostPath.使用函数可以允许你更精细地控制每一个文件。 完全忽略这个变量就会禁用编辑链接。
-        //   // editUrl: '',
-        //   // 是否展示阅读时间
-        //   showReadingTime: true,
-        //   readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-        //     defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
-        //   // 博客侧边栏标题
-        //   blogSidebarTitle: '近期阅读',
-        //   // 博客侧边栏展示的标题数，默认5个；如果是'ALL'，则侧边栏标题分页不可用且不展示侧边栏
-        //   blogSidebarCount: 'ALL',
-        //   editLocalizedFiles: false,
-        //   // 用于增进 SEO 的博客页面标题。
-        //   blogTitle: 'reading note',
-        //   // 用于增进 SEO 的博客页面元描述。
-        //   blogDescription: 'reading',
-        //   // 站点博客部分的 URL 前缀。
-        //   routeBasePath: 'books',
-        //   // 相对于内容路径的 glob 模式列表，匹配到的 Markdown 文件会被构建。
-        //   include: ['**/*.{md,mdx}'],
-        //   // Glob 模式列表，匹配到的 Markdown 文件会被排除。
-        //   exclude: [
-        //     '**/_*.{js,jsx,ts,tsx,md,mdx}',
-        //     '**/_*/**',
-        //     '**/*.test.{js,jsx,ts,tsx}',
-        //     '**/__tests__/**',
-        //   ],
-        //   // 每个博文列表页面显示的博文数量。
-        //   postsPerPage: 5,
-        //   // 博客列表页的根组件。
-        //   blogListComponent: '@theme/BlogListPage',
-        //   // 每个博文页面的根组件。
-        //   blogPostComponent: '@theme/BlogPostPage',
-        //   // 标签列表页的根组件。
-        //   blogTagsListComponent: '@theme/BlogTagsListPage',
-        //   // 「包含某标签的所有博文」页面的根组件。
-        //   blogTagsPostsComponent: '@theme/BlogTagsPostsPage',
-        //   // 传递给 MDX 的 Remark 插件。
-        //   remarkPlugins: [require('remark-math')],
-        //   // 传递给 MDX 的 Rehype 插件。
-        //   rehypePlugins: [],
-        //   // 在 Docusaurus 默认 Remark 插件之前传递给 MDX 的自定义 Remark 插件。
-        //   beforeDefaultRemarkPlugins: [],
-        //   // 在 Docusaurus 默认 Rehype 插件之前传递给 MDX 的自定义 Rehype 插件。
-        //   beforeDefaultRehypePlugins: [],
-        //   // 标明摘要结束处的标记。
-        //   truncateMarker: /<!--\s*(truncate)\s*-->/,
-        //   // 博客订阅源。
-        //   // feedOptions: {
-        //   //   type: '',
-        //   //   title: '',
-        //   //   description: '',
-        //   //   copyright: '',
-        //   //   language: undefined,
-        //   //   createFeedItems: async (params) => {
-        //   //     const { blogPosts, defaultCreateFeedItems, ...rest } = params;
-        //   //     return defaultCreateFeedItems({
-        //   //       // keep only the 10 most recent blog posts in the feed
-        //   //       blogPosts: blogPosts.filter((item, index) => index < 10),
-        //   //       ...rest,
-        //   //     });
-        //   //   },
-        //   // },
-        // },
         theme: {
           customCss: [require.resolve('./src/css/custom.css')]
         }
@@ -184,6 +118,76 @@ const config = {
   ],
 
   plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'books',
+        // 博客内容目录的文件系统路径，相对于站点目录。
+        path: 'books',
+        // 编辑文档的基础 URL。 The final URL is computed by editUrl + relativePostPath.使用函数可以允许你更精细地控制每一个文件。 完全忽略这个变量就会禁用编辑链接。
+        // editUrl: '',
+        // 是否展示阅读时间
+        showReadingTime: true,
+        readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+          defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+        // 博客侧边栏标题
+        blogSidebarTitle: '近期阅读',
+        // 博客侧边栏展示的标题数，默认5个；如果是'ALL'，则侧边栏标题分页不可用且不展示侧边栏
+        blogSidebarCount: 'ALL',
+        editLocalizedFiles: false,
+        // 用于增进 SEO 的博客页面标题。
+        blogTitle: 'reading note',
+        // 用于增进 SEO 的博客页面元描述。
+        blogDescription: 'reading',
+        // 站点博客部分的 URL 前缀。
+        routeBasePath: 'books',
+        // 相对于内容路径的 glob 模式列表，匹配到的 Markdown 文件会被构建。
+        include: ['**/*.{md,mdx}'],
+        // Glob 模式列表，匹配到的 Markdown 文件会被排除。
+        exclude: [
+          '**/_*.{js,jsx,ts,tsx,md,mdx}',
+          '**/_*/**',
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/__tests__/**',
+        ],
+        // 每个博文列表页面显示的博文数量。
+        postsPerPage: 5,
+        // 博客列表页的根组件。
+        blogListComponent: '@theme/BlogListPage',
+        // 每个博文页面的根组件。
+        blogPostComponent: '@theme/BlogPostPage',
+        // 标签列表页的根组件。
+        blogTagsListComponent: '@theme/BlogTagsListPage',
+        // 「包含某标签的所有博文」页面的根组件。
+        blogTagsPostsComponent: '@theme/BlogTagsPostsPage',
+        // 传递给 MDX 的 Remark 插件。
+        remarkPlugins: [require('remark-math')],
+        // 传递给 MDX 的 Rehype 插件。
+        rehypePlugins: [],
+        // 在 Docusaurus 默认 Remark 插件之前传递给 MDX 的自定义 Remark 插件。
+        beforeDefaultRemarkPlugins: [],
+        // 在 Docusaurus 默认 Rehype 插件之前传递给 MDX 的自定义 Rehype 插件。
+        beforeDefaultRehypePlugins: [],
+        // 标明摘要结束处的标记。
+        truncateMarker: /<!--\s*(truncate)\s*-->/,
+        // 博客订阅源。
+        // feedOptions: {
+        //   type: '',
+        //   title: '',
+        //   description: '',
+        //   copyright: '',
+        //   language: undefined,
+        //   createFeedItems: async (params) => {
+        //     const { blogPosts, defaultCreateFeedItems, ...rest } = params;
+        //     return defaultCreateFeedItems({
+        //       // keep only the 10 most recent blog posts in the feed
+        //       blogPosts: blogPosts.filter((item, index) => index < 10),
+        //       ...rest,
+        //     });
+        //   },
+        // },
+      }
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
