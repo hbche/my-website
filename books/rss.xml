@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>小车的小书屋 Blog</title>
+        <link>https://hbche.github.io/my-website/books</link>
+        <description>小车的小书屋 Blog</description>
+        <lastBuildDate>Tue, 03 Jun 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[全栈开发学习路线图]]></title>
+            <link>https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap</link>
+            <guid>https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap</guid>
+            <pubDate>Tue, 03 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[全栈开发指南]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-阶段一后端语言与框架">🧱 阶段一：后端语言与框架<a href="https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap#-%E9%98%B6%E6%AE%B5%E4%B8%80%E5%90%8E%E7%AB%AF%E8%AF%AD%E8%A8%80%E4%B8%8E%E6%A1%86%E6%9E%B6" class="hash-link" aria-label="🧱 阶段一：后端语言与框架的直接链接" title="🧱 阶段一：后端语言与框架的直接链接">​</a></h2>
+<ul>
+<li>
+<p><strong>选择主流后端语言：</strong></p>
+<ul>
+<li>Node.js（Express / NestJS）</li>
+<li>Java（Spring Boot）</li>
+<li>Python（FastAPI / Django / Flask）</li>
+<li>Go（Gin / Gorm）</li>
+</ul>
+</li>
+<li>
+<p><strong>学习方向：</strong></p>
+<ul>
+<li>基础语法、模块系统、异步编程、依赖管理</li>
+<li>框架选型对比与最佳实践</li>
+<li>实战 CRUD 项目练习（如 RESTful API）</li>
+</ul>
+</li>
+<li>
+<p><strong>全栈组合推荐：</strong></p>
+<ul>
+<li>MERN（MongoDB + Express + React + Node）</li>
+<li>Next.js + NestJS</li>
+<li>Spring Boot + Vue</li>
+<li>Django + React</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-阶段二数据库与-api-设计">🧩 阶段二：数据库与 API 设计<a href="https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap#-%E9%98%B6%E6%AE%B5%E4%BA%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E-api-%E8%AE%BE%E8%AE%A1" class="hash-link" aria-label="🧩 阶段二：数据库与 API 设计的直接链接" title="🧩 阶段二：数据库与 API 设计的直接链接">​</a></h2>
+<ul>
+<li>
+<p><strong>关系型数据库（SQL）</strong></p>
+<ul>
+<li>MySQL / PostgreSQL：掌握表设计、索引、事务、连接查询</li>
+</ul>
+</li>
+<li>
+<p><strong>非关系型数据库（NoSQL）</strong></p>
+<ul>
+<li>MongoDB：JSON 文档型数据库，灵活免 schema</li>
+<li>Redis：缓存、Session 存储</li>
+</ul>
+</li>
+<li>
+<p><strong>API 设计：</strong></p>
+<ul>
+<li>RESTful 原则：资源路径、HTTP 方法（GET/POST/PUT/DELETE）</li>
+<li>OpenAPI / Swagger 文档生成</li>
+<li>使用 Postman 测试</li>
+</ul>
+</li>
+<li>
+<p><strong>GraphQL（可选）：</strong></p>
+<ul>
+<li>灵活数据获取，解决 REST 过度/不足获取问题</li>
+<li>推荐 Apollo Server/Client 初学</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-阶段三用户认证与授权">🔐 阶段三：用户认证与授权<a href="https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap#-%E9%98%B6%E6%AE%B5%E4%B8%89%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83" class="hash-link" aria-label="🔐 阶段三：用户认证与授权的直接链接" title="🔐 阶段三：用户认证与授权的直接链接">​</a></h2>
+<ul>
+<li>
+<p><strong>认证（Authentication）</strong></p>
+<ul>
+<li>JWT：Token 签发、验证、刷新机制</li>
+<li>Session vs Token 模式对比</li>
+</ul>
+</li>
+<li>
+<p><strong>授权（Authorization）</strong></p>
+<ul>
+<li>OAuth2 / OpenID Connect：社交登录、授权码流程</li>
+<li>RBAC：角色权限管理</li>
+</ul>
+</li>
+<li>
+<p><strong>安全加固：</strong></p>
+<ul>
+<li>HTTPS、CORS、XSS/CSRF/Security Headers</li>
+<li>数据加密、SQL 注入防护、API 访问控制</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-阶段四部署与-devops">🚀 阶段四：部署与 DevOps<a href="https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap#-%E9%98%B6%E6%AE%B5%E5%9B%9B%E9%83%A8%E7%BD%B2%E4%B8%8E-devops" class="hash-link" aria-label="🚀 阶段四：部署与 DevOps的直接链接" title="🚀 阶段四：部署与 DevOps的直接链接">​</a></h2>
+<ul>
+<li>
+<p><strong>Linux 基础</strong></p>
+<ul>
+<li>常用命令：<code>ls</code>、<code>vim</code>、<code>grep</code>、<code>chmod</code>、<code>scp</code> 等</li>
+<li>SSH、UFW、环境变量配置</li>
+</ul>
+</li>
+<li>
+<p><strong>Docker 容器化</strong></p>
+<ul>
+<li>概念：镜像 / 容器 / Volume / 网络</li>
+<li>编写 Dockerfile 和 docker-compose.yml</li>
+</ul>
+</li>
+<li>
+<p><strong>CI/CD 自动化</strong></p>
+<ul>
+<li>GitHub Actions / GitLab CI / Jenkins：构建 + 测试 + 部署</li>
+<li>自动化部署流程配置（示例：代码推送后部署到服务器）</li>
+</ul>
+</li>
+<li>
+<p><strong>Nginx 反向代理</strong></p>
+<ul>
+<li>静态资源服务、负载均衡、SSL 配置</li>
+</ul>
+</li>
+<li>
+<p><strong>云服务平台（了解）</strong></p>
+<ul>
+<li>AWS / GCP / Azure：EC2、S3、Lambda、RDS</li>
+<li>Docker 部署 / Kubernetes（K8s）入门</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-阶段五项目结构与架构模式">🏗️ 阶段五：项目结构与架构模式<a href="https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap#%EF%B8%8F-%E9%98%B6%E6%AE%B5%E4%BA%94%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F" class="hash-link" aria-label="🏗️ 阶段五：项目结构与架构模式的直接链接" title="🏗️ 阶段五：项目结构与架构模式的直接链接">​</a></h2>
+<ul>
+<li>
+<p><strong>前后端分离架构</strong></p>
+<ul>
+<li>前端使用 React/Vue，后端提供 API 接口</li>
+<li>独立部署、跨域通信配置</li>
+</ul>
+</li>
+<li>
+<p><strong>微服务架构（进阶）</strong></p>
+<ul>
+<li>每个服务独立职责、可独立扩展</li>
+<li>服务间通信：HTTP / RPC / Message Queue（RabbitMQ/Kafka）</li>
+</ul>
+</li>
+<li>
+<p><strong>Monorepo vs 多仓库</strong></p>
+<ul>
+<li>Monorepo：统一管理（Turborepo / Nx）</li>
+<li>多仓库：各服务独立管理</li>
+</ul>
+</li>
+<li>
+<p><strong>其他模式</strong></p>
+<ul>
+<li>Micro Frontends、BFF（Backend For Frontend）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-阶段六实战项目建议">🧪 阶段六：实战项目建议<a href="https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap#-%E9%98%B6%E6%AE%B5%E5%85%AD%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E5%BB%BA%E8%AE%AE" class="hash-link" aria-label="🧪 阶段六：实战项目建议的直接链接" title="🧪 阶段六：实战项目建议的直接链接">​</a></h2>
+<table><thead><tr><th>项目</th><th>技术栈示例</th><th>练习重点</th></tr></thead><tbody><tr><td>博客系统</td><td>React + Express/NestJS + MongoDB/PostgreSQL</td><td>用户登录、CRUD、权限、评论功能</td></tr><tr><td>电商平台</td><td>Next.js + NestJS + MySQL + Redis</td><td>商品管理、购物车、支付、后台系统</td></tr><tr><td>SaaS 管理后台</td><td>React + Ant Design + Spring Boot + PostgreSQL</td><td>多租户、权限系统、表格图表展示</td></tr><tr><td>AI 聊天机器人</td><td>Next.js + FastAPI + OpenAI API</td><td>API 调用、异步处理、上下文存储</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-阶段七学习时间规划建议">🕒 阶段七：学习时间规划（建议）<a href="https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap#-%E9%98%B6%E6%AE%B5%E4%B8%83%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B4%E8%A7%84%E5%88%92%E5%BB%BA%E8%AE%AE" class="hash-link" aria-label="🕒 阶段七：学习时间规划（建议）的直接链接" title="🕒 阶段七：学习时间规划（建议）的直接链接">​</a></h2>
+<table><thead><tr><th>阶段</th><th>时长</th><th>内容</th></tr></thead><tbody><tr><td>后端入门</td><td>2–3 个月</td><td>Node.js/Java/Python，数据库，完成小项目</td></tr><tr><td>API + 授权</td><td>2 个月</td><td>RESTful 规范，JWT，OAuth2，权限控制</td></tr><tr><td>部署与运维</td><td>1–2 个月</td><td>Linux、Docker、CI/CD、Nginx、部署至云平台</td></tr><tr><td>架构设计</td><td>1 个月</td><td>微服务、前后端分离、仓库模式</td></tr><tr><td>综合实战</td><td>2–3 个月</td><td>1~2 个完整项目，部署上线，撰写技术总结</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-补充学习建议">📚 补充学习建议<a href="https://hbche.github.io/my-website/books/2025/06/03/full-stack-roadmap#-%E8%A1%A5%E5%85%85%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE" class="hash-link" aria-label="📚 补充学习建议的直接链接" title="📚 补充学习建议的�直接链接">​</a></h2>
+<ul>
+<li>
+<p><strong>推荐资源</strong></p>
+<ul>
+<li><a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">Node.js 官方文档</a></li>
+<li><a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer">Spring Boot 官网</a></li>
+<li><a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI 官方文档</a></li>
+<li><a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer">Docker 文档</a></li>
+<li><a href="https://jwt.io/introduction" target="_blank" rel="noopener noreferrer">JWT 指南</a></li>
+</ul>
+</li>
+<li>
+<p><strong>练习平台</strong></p>
+<ul>
+<li>LeetCode / HackerRank：数据结构与算法</li>
+<li>Postman：API 调试</li>
+<li>GitHub：开源项目参考</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>读书笔记</category>
+            <category>nodejs</category>
+        </item>
+        <item>
+            <title><![CDATA[node学习指南]]></title>
+            <link>https://hbche.github.io/my-website/books/2025/06/03/learning-node</link>
+            <guid>https://hbche.github.io/my-website/books/2025/06/03/learning-node</guid>
+            <pubDate>Tue, 03 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[nodejs入门书籍]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="简介">简介<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AE%80%E4%BB%8B" class="hash-link" aria-label="简介的直接链接" title="简介的直接链接">​</a></h2>
+<ul>
+<li><strong>书名</strong>：《node 学习指南》</li>
+<li><strong>作者</strong>：Shelley Powers</li>
+<li><strong>时间</strong>：2014 年 3 月</li>
+<li><strong>出版社</strong>：人民邮电出版社</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="概述">概述<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E6%A6%82%E8%BF%B0" class="hash-link" aria-label="概述的直接链接" title="概述的直接链接">​</a></h2>
+<p>Node.js 是一套用来编写高性能网络服务器的 JavaScript 工具包。可以让 JavaScript 在
+服务器端运行，可用来快速构建网络服务及应用的平台。</p>
+<p>主要介绍了 Node 基础知识，异步，Web 开发（路由、代理、web 服务器、中间件），缓存
+（Redis、MongoDB），图形和媒体、Socket.io 模块、测试和调试、安全与权限、Node 应
+用的扩展和部署。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-1-章-nodejs启动与运行">第 1 章 Node.js：启动与运行<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-1-%E7%AB%A0-nodejs%E5%90%AF%E5%8A%A8%E4%B8%8E%E8%BF%90%E8%A1%8C" class="hash-link" aria-label="第 1 章 Node.js：启动与运行的直接链接" title="第 1 章 Node.js：启动与运行的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-2-章-node-与-repl">第 2 章 Node 与 REPL<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-2-%E7%AB%A0-node-%E4%B8%8E-repl" class="hash-link" aria-label="第 2 章 Node 与 REPL的直接链接" title="第 2 章 Node 与 REPL的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-3-章-node-核心库">第 3 章 Node 核心库<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-3-%E7%AB%A0-node-%E6%A0%B8%E5%BF%83%E5%BA%93" class="hash-link" aria-label="第 3 章 Node 核心库的直接链接" title="第 3 章 Node 核心库的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-4-章-node-模块系统">第 4 章 Node 模块系统<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-4-%E7%AB%A0-node-%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F" class="hash-link" aria-label="第 4 章 Node 模块系统的直接链接" title="第 4 章 Node 模块系统的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-5-章-控制流异步模式和异常处理">第 5 章 控制流、异步模式和异常处理<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-5-%E7%AB%A0-%E6%8E%A7%E5%88%B6%E6%B5%81%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86" class="hash-link" aria-label="第 5 章 控制流、异步模式和异常处理的直接链接" title="第 5 章 控制流、异步模式和异常处理的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-6-章-路由寻址服务文件和中间件">第 6 章 路由寻址、服务文件和中间件<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-6-%E7%AB%A0-%E8%B7%AF%E7%94%B1%E5%AF%BB%E5%9D%80%E6%9C%8D%E5%8A%A1%E6%96%87%E4%BB%B6%E5%92%8C%E4%B8%AD%E9%97%B4%E4%BB%B6" class="hash-link" aria-label="第 6 章 路由寻址、服务文件和中间件的直接链接" title="第 6 章 路由寻址、服务文件和中间件的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-7-张-express-框架">第 7 张 Express 框架<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-7-%E5%BC%A0-express-%E6%A1%86%E6%9E%B6" class="hash-link" aria-label="第 7 张 Express 框架的直接链接" title="第 7 张 Express 框架的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-8-章-express模板�系统和-css">第 8 章 Express、模板系统和 CSS<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-8-%E7%AB%A0-express%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F%E5%92%8C-css" class="hash-link" aria-label="第 8 章 Express、模板系统和 CSS的直接链接" title="第 8 章 Express、模板系统和 CSS的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-9-章-结构化数据noe-和-redis">第 9 章 结构化数据、Noe 和 Redis<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-9-%E7%AB%A0-%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AEnoe-%E5%92%8C-redis" class="hash-link" aria-label="第 9 章 结构化数据、Noe 和 Redis的直接链接" title="第 9 章 结构化数据、Noe 和 Redis的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-10-章-node-和-mongodb文档中心数据">第 10 章 Node 和 MongoDB：文档中心数据<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-10-%E7%AB%A0-node-%E5%92%8C-mongodb%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE" class="hash-link" aria-label="第 10 章 Node 和 MongoDB：文档中心数据的直接链接" title="第 10 章 Node 和 MongoDB：文档中心数据的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-11-章-node-与关系型数据库">第 11 章 Node 与关系型数据库<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-11-%E7%AB%A0-node-%E4%B8%8E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93" class="hash-link" aria-label="第 11 章 Node 与关系型数据库的直接链接" title="第 11 章 Node 与关系型数据库的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="第-12-章-图形和-html5-video">第 12 章 图形和 HTML5 Video<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AC%AC-12-%E7%AB%A0-%E5%9B%BE%E5%BD%A2%E5%92%8C-html5-video" class="hash-link" aria-label="第 12 章 图形和 HTML5 Video的直接链接" title="第 12 章 图形和 HTML5 Video的直接链接">​</a></h2>
+<ul>
+<li>简述章节一的主要内容，结合书籍主题进行分析；</li>
+<li>分析作者的观点和论证方式，引用相关数据和案例进行支持。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="章节二">章节二<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%AB%A0%E8%8A%82%E4%BA%8C" class="hash-link" aria-label="章节二的直接链接" title="章节二的直接链接">​</a></h3>
+<ul>
+<li>简述章节二的主要内容，结合书籍主题进行分析；</li>
+<li>分析作者的观点和论证方式，引用相关数据和案例进行支持。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="其他章节">其他章节<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E5%85%B6%E4%BB%96%E7%AB%A0%E8%8A%82" class="hash-link" aria-label="其他章节的直接链接" title="其他章节的直接链接">​</a></h3>
+<ul>
+<li>如果书籍有其他章节，也可以依照上述方式进行分析和总结。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="写作风格和叙述手法">写作风格和叙述手法<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E5%86%99%E4%BD%9C%E9%A3%8E%E6%A0%BC%E5%92%8C%E5%8F%99%E8%BF%B0%E6%89%8B%E6%B3%95" class="hash-link" aria-label="写作风格和叙述手法的直接链接" title="写作风格和叙述手法的直接链接">​</a></h2>
+<ul>
+<li>分析作者的写作风格和叙述手法，包括语言和表达方式等；</li>
+<li>评价作者如何让读者深入了解书中的主题，以及有没有使用一些引人入胜的技巧来吸引读
+者。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="亮点和不足">亮点和不足<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E4%BA%AE%E7%82%B9%E5%92%8C%E4%B8%8D%E8%B6%B3" class="hash-link" aria-label="亮点和不足的直接链接" title="亮点和不足的直接链接">​</a></h2>
+<ul>
+<li>突出书籍的亮点和作者的贡献、洞见、观点的独特性；</li>
+<li>分析书籍可能存在的局限性和不足之处，结合具体章节和内容进行分析。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="看法和感受">看法和感受<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E7%9C%8B%E6%B3%95%E5%92%8C%E6%84%9F%E5%8F%97" class="hash-link" aria-label="看法和感受的直接链接" title="看法和感受的直接链接">​</a></h2>
+<ul>
+<li>表达自己对书中观点的认同度、是否产生了启发性的思考；</li>
+<li>评价自己对书中提出的问题和观点的理解和评价等，结合自己的经验和知识进行分析。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="优秀点评">优秀点评<a href="https://hbche.github.io/my-website/books/2025/06/03/learning-node#%E4%BC%98%E7%A7%80%E7%82%B9%E8%AF%84" class="hash-link" aria-label="优秀点评的直接链接" title="优秀点评的直接链接">​</a></h2>
+<ul>
+<li>读者：点评内容</li>
+</ul>
+<table><thead><tr><th>评价</th><th>豆瓣</th><th>微信读书</th><th>自我点评</th></tr></thead><tbody><tr><td>评分</td><td></td><td></td><td></td></tr><tr><td>人数</td><td></td><td></td><td></td></tr></tbody></table>]]></content:encoded>
+            <category>读书笔记</category>
+            <category>nodejs</category>
+        </item>
+        <item>
+            <title><![CDATA[了不起的nodejs]]></title>
+            <link>https://hbche.github.io/my-website/books/2025/05/30/the-best-node</link>
+            <guid>https://hbche.github.io/my-website/books/2025/05/30/the-best-node</guid>
+            <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[nodejs入门书籍]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="简介">简介<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E7%AE%80%E4%BB%8B" class="hash-link" aria-label="简介的直接链接" title="简介的直接链接">​</a></h2>
+<ul>
+<li><strong>书名</strong>：《了不起的 nodejs》</li>
+<li><strong>作者</strong>：作者名</li>
+<li><strong>背景</strong>：作者的职业背景、写作动机等背景信息</li>
+<li><strong>时间</strong>：出版时间</li>
+<li><strong>出版社</strong>：出版社名称</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="概述">概述<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E6%A6%82%E8%BF%B0" class="hash-link" aria-label="概述的直接链接" title="概述的直接链接">​</a></h2>
+<ul>
+<li>介绍书籍的主题和结构，简单概括全书内容；</li>
+<li>了解整本书的框架和主要内容。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="章节">章节<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E7%AB%A0%E8%8A%82" class="hash-link" aria-label="章节的直接链接" title="章节的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="章节一">章节一<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E7%AB%A0%E8%8A%82%E4%B8%80" class="hash-link" aria-label="章节一的直接链接" title="章节一的直接链接">​</a></h3>
+<ul>
+<li>简述章节一的主要内容，结合书籍主题进行分析；</li>
+<li>分析作者的观点和论证方式，引用相关数据和案例进行支持。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="章节二">章节二<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E7%AB%A0%E8%8A%82%E4%BA%8C" class="hash-link" aria-label="章节二的直接链接" title="章节二的直接链接">​</a></h3>
+<ul>
+<li>简述章节二的主要内容，结合书籍主题进行分析；</li>
+<li>分析作者的观点和论证方式，引用相关数据和案例进行支持。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="其他章节">其他章节<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E5%85%B6%E4%BB%96%E7%AB%A0%E8%8A%82" class="hash-link" aria-label="其他章节的直接链接" title="其他章节的直接链接">​</a></h3>
+<ul>
+<li>如果书籍有其他章节，也可以依照上述方式进行分析和总结。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="写作风格和叙述手法">写作风格和叙述手法<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E5%86%99%E4%BD%9C%E9%A3%8E%E6%A0%BC%E5%92%8C%E5%8F%99%E8%BF%B0%E6%89%8B%E6%B3%95" class="hash-link" aria-label="写作风格和叙述手法的直接链接" title="写作风格和叙述手法的直接链接">​</a></h2>
+<ul>
+<li>分析作者的写作风格和叙述手法，包括语言和表达方式等；</li>
+<li>评价作者如何让读者深入了解书中的主题，以及有没有使用一些引人入胜的技巧来吸引读
+者。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="亮点和不足">亮点和不足<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E4%BA%AE%E7%82%B9%E5%92%8C%E4%B8%8D%E8%B6%B3" class="hash-link" aria-label="亮点和不足的直接链接" title="亮点和不足的直接链接">​</a></h2>
+<ul>
+<li>突出书籍的亮点和作者的贡献、洞见、观点的独特性；</li>
+<li>分析书籍可能存在的局限性和不足之处，结合具体章节和内容进行分析。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="看法和感受">看法和感受<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E7%9C%8B%E6%B3%95%E5%92%8C%E6%84%9F%E5%8F%97" class="hash-link" aria-label="看法和感受的直接链接" title="看法和感受的直接链接">​</a></h2>
+<ul>
+<li>表达自己对书中观点的认同度、是否产生了启发性的思考；</li>
+<li>评价自己对书中提出的问题和观点的理解和评价等，结合自己的经验和知识进行分析。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="优秀点评">优秀点评<a href="https://hbche.github.io/my-website/books/2025/05/30/the-best-node#%E4%BC%98%E7%A7%80%E7%82%B9%E8%AF%84" class="hash-link" aria-label="优秀点评的直接链接" title="优秀点评的直接链接">​</a></h2>
+<ul>
+<li>读者：点评内容</li>
+</ul>
+<table><thead><tr><th>评价</th><th>豆瓣</th><th>微信读书</th><th>自我点评</th></tr></thead><tbody><tr><td>评分</td><td></td><td></td><td></td></tr><tr><td>人数</td><td></td><td></td><td></td></tr></tbody></table>]]></content:encoded>
+            <category>读书笔记</category>
+            <category>nodejs</category>
+        </item>
+        <item>
+            <title><![CDATA[深入浅出nodejs]]></title>
+            <link>https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way</link>
+            <guid>https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way</guid>
+            <pubDate>Wed, 28 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[nodejs入门书籍]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="简介">简介<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E7%AE%80%E4%BB%8B" class="hash-link" aria-label="简介的直接链接" title="简介的直接链接">​</a></h2>
+<ul>
+<li><strong>书名</strong>：《深入浅出nodejs》</li>
+<li><strong>作者</strong>：朴灵</li>
+<li><strong>背景</strong>：作者的职业背景、写作动机等背景信息</li>
+<li><strong>时间</strong>：出版时间</li>
+<li><strong>出版社</strong>：出版社名称</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="概述">概述<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E6%A6%82%E8%BF%B0" class="hash-link" aria-label="概述的直接链接" title="概述的直接链接">​</a></h2>
+<ul>
+<li>介绍书籍的主题和结构，简单概括全书内容；</li>
+<li>了解整本书的框架和主要内容。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="章节">章节<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E7%AB%A0%E8%8A%82" class="hash-link" aria-label="章节的直接链接" title="章节的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="章节一">章节一<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E7%AB%A0%E8%8A%82%E4%B8%80" class="hash-link" aria-label="章节一的直接链接" title="章节一的直接链接">​</a></h3>
+<ul>
+<li>简述章节一的主要内容，结合书籍主题进行分析；</li>
+<li>分析作者的观点和论证方式，引用相关数据和案例进行支持。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="章节二">章节二<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E7%AB%A0%E8%8A%82%E4%BA%8C" class="hash-link" aria-label="章节二的直接链接" title="章节二的直接链接">​</a></h3>
+<ul>
+<li>简述章节二的主要内容，结合书籍主题进行分析；</li>
+<li>分析作者的观点和论证方式，引用相关数据和案例进行支持。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="其他章节">其他章节<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E5%85%B6%E4%BB%96%E7%AB%A0%E8%8A%82" class="hash-link" aria-label="其他章节的直接链接" title="其他章节的直接链接">​</a></h3>
+<ul>
+<li>如果书籍有其他章节，也可以依照上述方式进行分析和总结。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="写作风格和叙述手法">写作风格和叙述手法<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E5%86%99%E4%BD%9C%E9%A3%8E%E6%A0%BC%E5%92%8C%E5%8F%99%E8%BF%B0%E6%89%8B%E6%B3%95" class="hash-link" aria-label="写作风格和叙述手法的直接链接" title="写作风格和叙述手法的直接链接">​</a></h2>
+<ul>
+<li>分析作者的写作风格和叙述手法，包括语言和表达方式等；</li>
+<li>评价作者如何让读者深入了解书中的主题，以及有没有使用一些引人入胜的技巧来吸引读
+者。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="亮点和不足">亮点和不足<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E4%BA%AE%E7%82%B9%E5%92%8C%E4%B8%8D%E8%B6%B3" class="hash-link" aria-label="亮点和不足的直接链接" title="亮点和不足的直接链接">​</a></h2>
+<ul>
+<li>突出书籍的亮点和作者的贡献、洞见、观点的独特性；</li>
+<li>分析书籍可能存在的局限性和不足之处，结合具体章节和内容进行分析。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="看法和感受">看法和感受<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E7%9C%8B%E6%B3%95%E5%92%8C%E6%84%9F%E5%8F%97" class="hash-link" aria-label="看法和感受的直接链接" title="看法和感受的直接链接">​</a></h2>
+<ul>
+<li>表达自己对书中观点的认同度、是否产生了启发性的思考；</li>
+<li>评价自己对书中提出的问题和观点的理解和评价等，结合自己的经验和知识进行分析。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="优秀点评">优秀点评<a href="https://hbche.github.io/my-website/books/2025/05/18/nodejs-the-right-way#%E4%BC%98%E7%A7%80%E7%82%B9%E8%AF%84" class="hash-link" aria-label="优秀点评的直接链接" title="优秀点评的直接链接">​</a></h2>
+<ul>
+<li>读者：点评内容</li>
+</ul>
+<table><thead><tr><th>评价</th><th>豆瓣</th><th>微信读书</th><th>自我点评</th></tr></thead><tbody><tr><td>评分</td><td></td><td></td><td></td></tr><tr><td>人数</td><td></td><td></td><td></td></tr></tbody></table>]]></content:encoded>
+            <category>读书笔记</category>
+            <category>nodejs</category>
+        </item>
+    </channel>
+</rss>
