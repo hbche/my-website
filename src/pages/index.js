@@ -16,7 +16,7 @@ function MyHero() {
           </React.Fragment>)}
         </h1>
         <p className={styles.leftContainer_p}>
-          { } 💨
+          { } ✨
           <br />
           记录学习历程
         </p>

@@ -65,4 +65,4 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 感谢第三方原创作者的无私贡献！
 
-感觉 Docusaurus 项目官方的维护开发！
+感谢 Docusaurus 项目官方的维护开发！
