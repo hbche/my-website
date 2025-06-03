@@ -129,9 +129,21 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'tutorial',
+        id: 'tutorial-zustand',
         path: 'tutorial/zustand',
         routeBasePath: 'zustand',
+        sidebarPath: require.resolve('./sidebars.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorial-redux',
+        path: 'tutorial/redux',
+        routeBasePath: 'redux',
         sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
@@ -261,12 +273,16 @@ const config = {
         },
         items: [
           {
-            label: '📖 教程',
+            label: '📖 学习记录',
             position: 'left',
             items: [
               {
                 label: 'Zustand学习记录',
                 to: '/zustand'
+              },
+              {
+                label: 'Redux学习记录',
+                to: '/redux'
               }
             ]
           },
