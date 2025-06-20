@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2071],{87347:e=>{e.exports=JSON.parse('{"label":"prosemirror","permalink":"/my-website/blog/tags/prosemirror","allTagsPath":"/my-website/blog/tags","count":1,"unlisted":false}')}}]);
