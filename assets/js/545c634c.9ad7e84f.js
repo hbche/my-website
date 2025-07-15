@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1662],{40713:e=>{e.exports=JSON.parse('{"label":"web","permalink":"/my-website/python/tags/web","allTagsPath":"/my-website/python/tags","count":1,"items":[{"id":"web/plan","title":"Python Web","description":"Python Web","permalink":"/my-website/python/web/plan"}],"unlisted":false}')}}]);
