@@ -215,6 +215,18 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'tutorial-python',
+        path: 'tutorial/python',
+        routeBasePath: 'python',
+        sidebarPath: require.resolve('./sidebars.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'frontend',
         path: 'wiki/frontend',
         routeBasePath: 'frontend',
@@ -345,6 +357,10 @@ const config = {
               {
                 label: 'Redux学习记录',
                 to: '/redux'
+              },
+              {
+                label: 'Python学习记录',
+                to: '/python'
               }
             ]
           },
