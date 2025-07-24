@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3574],{427:e=>{e.exports=JSON.parse('{"permalink":"/my-website/books/tags/\u8bfb\u4e66\u7b14\u8bb0","page":1,"postsPerPage":5,"totalPages":1,"totalCount":5,"blogDescription":"reading","blogTitle":"reading note"}')}}]);
